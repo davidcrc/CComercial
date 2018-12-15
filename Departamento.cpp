@@ -22,7 +22,9 @@ class Departamento
 
     // Cambiar el nombre del articulo deacuerdo a la posicion
     void setArticulos(int pos, string nomArticulo, float precio);
+    void printArticulos();
 
+    void comprarArticulo(int posArt);
 
     ~Departamento();
 };
@@ -73,6 +75,23 @@ void Departamento::setArticulos(int pos, string nomArticulo, float precio)
     this->Articulos[pos].setPrecio(num);
 }
 
+void Departamento::printArticulos()
+{
+
+    cout << "Codigo " << "\tNombre Articulo" << "\tPrecio"<< endl;
+    for (int i = 0; i < this->numArticulos; i++)
+    {
+        int code = this->Articulos[i].getCodigo();
+        string nombre = this->Articulos[i].getNombre();
+        float precio = this->Articulos[i].getPrecio();
+        // cout << "[" << code << "] " << "\t" << nombre << "\t" << precio << endl;
+        cout << "[" << i+1 << "] " << "\t" << nombre << "\t" << precio << endl;
+    }
+}
+
+void Departamento::comprarArticulo(int posArt){
+    this->Articulos[posArt].getPrecio();
+}
 
 
 

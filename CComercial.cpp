@@ -19,6 +19,7 @@ class CComercial
 
     void printDepaArticulo(int posicionDep);
     void printDepartamentos();
+    void printDepartamentosArticulos();
 
     ~CComercial();
 };
@@ -64,6 +65,17 @@ void CComercial::printDepartamentos()
 void CComercial::printDepaArticulo(int pos)
 {
     cout << "[D] " << this->Departamentos[pos].getNombre() << endl;
-
+    this->Departamentos[pos].printArticulos();
+    cout << endl;
 }
 
+void CComercial::printDepartamentosArticulos()
+{
+
+    for (int i = 0; i < this->numDepartamentos; i++)
+    {
+        cout << "[D] " << this->Departamentos[i].getNombre() << endl;
+        this->Departamentos[i].printArticulos();
+        cout << endl;
+    }
+}
